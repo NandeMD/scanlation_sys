@@ -1,0 +1,7 @@
+{
+  "API_IP": "127.0.0.1:8000",
+  "TEST_API_IP": "127.0.0.1:8000",
+  "SECRET": "Your secret here.",
+  "T_ZONE": "Europe/Istanbul",
+  "LOCALE": "tr"
+}

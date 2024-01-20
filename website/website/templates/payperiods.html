@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Payment Periods
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+{% endblock %}
+
+{% block content %}
+    <br/><br/>
+    <div class="d-flex justify-content-center">
+        <div class="input-group search-group">
+            <span class="input-group-text">Period ID</span>
+            <input type="text" class="form-control" placeholder="Search by ID" aria-label="ID" id="search-by-id" onkeyup="filterByID()">
+        </div>
+    </div>
+    <br/><br/>
+    <div class="table-margin">
+        <table class="table table-hover table-dark table-bordered" id="chapters-page-table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col" class="th-centered">Opener ID</th>
+                    <th scope="col" class="th-centered">Opener Name</th>
+                    <th scope="col" class="th-centered">Opened At</th>
+                    <th scope="col" class="th-centered">Closer ID</th>
+                    <th scope="col" class="th-centered">Closer Name</th>
+                    <th scope="col" class="th-centered">Closed At</th>
+                </tr>
+            </thead>
+            <tbody>
+                    {% for period in payment_periods %}
+                    <tr>
+                        <th scope="row">{{ period["id"] }}</th>
+                        <td class="td-centered">{{ period["creator_id"] }}</td>
+                        <td class="td-centered">{{ period["creator_name"] }}</td>
+                        <th class="td-centered">{{ period["created_at"] }}</th>
+                        <th class="td-centered">{{ period["closer_id"] }}</th>
+                        <th class="td-centered">{{ period["closer_name"] }}</th>
+                        <th class="td-centered">{{ period["closed_at"] }}</th>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script type="application/javascript" src="{{ url_for('static', filename='chapters-page.js') }}" async></script>
+{% endblock %}

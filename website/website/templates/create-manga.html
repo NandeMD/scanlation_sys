@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}
+Add Serie
+{% endblock %}
+
+{% block content %}
+    <div class="d-flex flex-column justify-content-center">
+        <div class="d-flex justify-content-center">
+            <form method="POST">
+                <br><br/>
+                <div class="create-manga-grid">
+                    <div class="mb-3">
+                        <label for="create-manga-serie-name" class="form-label text-secondary">Serie Name</label>
+                        <input type="text" name="create-manga-serie-name" id="create-manga-serie-name" class="form-control" style="width: 100%">
+                    </div>
+                    <div class="mb-3">
+                        <label for="create-manga-img-url" class="form-label text-secondary">Image URL</label>
+                        <input type="text" name="create-manga-img-url" id="create-manga-img-url" class="form-control" style="width: 100%">
+                    </div>
+                    <div class="mb-3">
+                        <label for="create-manga-source" class="form-label text-secondary">Source URL</label>
+                        <input type="text" name="create-manga-source" id="create-manga-source" class="form-control" style="width: 100%">
+                    </div>
+                    <div class="mb-3">
+                        <label for="create-manga-base" class="form-label text-secondary">Base URL</label>
+                        <input type="text" name="create-manga-base" id="create-manga-base" class="form-control" style="width: 100%">
+                    </div>
+                    <div class="mb-3">
+                        <label for="create-manga-source-chap" class="form-label text-secondary">Source Chapter</label>
+                        <input type="text" name="create-manga-source-chap" id="create-manga-source-chap" class="form-control" style="width: 100%">
+                    </div>
+                    <div class="mb-3">
+                        <label for="create-manga-base-chap" class="form-label text-secondary">Base Chapter</label>
+                        <input type="text" name="create-manga-base-chap" id="create-manga-base-chap" class="form-control" style="width: 100%">
+                    </div>
+                    <div class="mb-3">
+                        <label for="create-manga-role-id" class="form-label text-secondary">Role ID</label>
+                        <input type="text" name="create-manga-role-id" id="create-manga-role-id" class="form-control" style="width: 100%">
+                    </div>
+                    <div class="mb-3">
+                        <label for="create-manga-channel-id" class="form-label text-secondary">Channel ID</label>
+                        <input type="text" name="create-manga-channel-id" id="create-manga-channel-id" class="form-control" style="width: 100%">
+                    </div>
+                    <div class="mb-3">
+                        <label for="create-manga-tl-id" class="form-label text-secondary">Translator ID</label>
+                        <input type="text" name="create-manga-tl-id" id="create-manga-tl-id" class="form-control" style="width: 100%">
+                    </div>
+                    <div class="mb-3">
+                        <label for="create-manga-pr-id" class="form-label text-secondary">Proofreader ID</label>
+                        <input type="text" name="create-manga-pr-id" id="create-manga-pr-id" class="form-control" style="width: 100%">
+                    </div>
+                    <div class="mb-3">
+                        <label for="create-manga-clnr-id" class="form-label text-secondary">Cleaner ID</label>
+                        <input type="text" name="create-manga-clnr-id" id="create-manga-clnr-id" class="form-control" style="width: 100%">
+                    </div>
+                    <div class="mb-3">
+                        <label for="create-manga-tser-id" class="form-label text-secondary">Typesetter ID</label>
+                        <input type="text" name="create-manga-tser-id" id="create-manga-tser-id" class="form-control" style="width: 100%">
+                    </div>
+                    <div class="mb-3">
+                        <label for="create-manga-category-id" class="form-label text-secondary">Category ID</label>
+                        <input type="text" name="create-manga-category-id" id="create-manga-category-id" class="form-control" style="width: 100%">
+                    </div>
+                    <div class="mb-3">
+                        <label for="create-manga-last-chapter-url" class="form-label text-secondary">Last Chapter URL</label>
+                        <input type="text" name="create-manga-last-chapter-url" id="create-manga-last-chapter-url" class="form-control" style="width: 100%">
+                    </div>
+                    <div class="mb-3">
+                        <label for="create-manga-qc" class="form-label text-secondary">QC?</label>
+                        <select name="create-manga-qc" id="create-manga-qc" class="form-select">
+                            <option selected value="1">Needed</option>
+                            <option value="0">Not Needed</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="create-manga-lastread-id" class="form-label text-secondary">Last Reader ID</label>
+                        <input type="text" name="create-manga-lastread-id" id="create-manga-lastread-id" class="form-control" style="width: 100%">
+                    </div>
+                    <div class="create-manga-footer">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

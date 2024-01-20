@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% block title %}
+Update Chapter
+{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+    <form method="post">
+        <br/><br/><br/>
+        <div class="update-chapter-grid">
+            <div class="mb-3 update-chapter-header">
+                <label for="update-chapter-id" class="form-label text-secondary">Chapter ID</label>
+                <input type="number"
+                       name="update-chapter-id"
+                       id="update-chapter-id"
+                       class="form-control"
+                       placeholder="*"
+                       oninput="this.value = !!this.value && Math.abs(this.value) > 0 ? Math.abs(this.value) : null">
+            </div>
+            <div class="mb-3">
+                <label for="update-chapter-serie-id" class="form-label text-secondary">Serie ID</label>
+                <input type="number"
+                       name="update-chapter-serie-id"
+                       id="update-chapter-serie-id"
+                       class="form-control"
+                       oninput="this.value = !!this.value && Math.abs(this.value) > 0 ? Math.abs(this.value) : null">
+            </div>
+            <div class="mb-3">
+                <label for="update-chapter-serie-name" class="form-label text-secondary">Serie Name</label>
+                <input type="text"
+                       name="update-chapter-serie-name"
+                       id="update-chapter-serie-name"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-chapter-chapter-no" class="form-label text-secondary">Chapter No</label>
+                <input type="text"
+                       name="update-chapter-chapter-no"
+                       id="update-chapter-chapter-no"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-chapter-creator-id" class="form-label text-secondary">Opener ID</label>
+                <input type="text"
+                       name="update-chapter-creator-id"
+                       id="update-chapter-creator-id"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-chapter-creator-name" class="form-label text-secondary">Opener Name</label>
+                <input type="text"
+                       name="update-chapter-creator-name"
+                       id="update-chapter-creator-name"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-chapter-tl-id" class="form-label text-secondary">TL ID</label>
+                <input type="text"
+                       name="update-chapter-tl-id"
+                       id="update-chapter-tl-id"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-chapter-tl-name" class="form-label text-secondary">TL Name</label>
+                <input type="text"
+                       name="update-chapter-tl-name"
+                       id="update-chapter-tl-name"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-chapter-pr-id" class="form-label text-secondary">PR ID</label>
+                <input type="text"
+                       name="update-chapter-pr-id"
+                       id="update-chapter-pr-id"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-chapter-pr-name" class="form-label text-secondary">PR Name</label>
+                <input type="text"
+                       name="update-chapter-pr-name"
+                       id="update-chapter-pr-name"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-chapter-tl-bytes" class="form-label text-secondary">TL Bytes</label>
+                <input type="text"
+                       name="update-chapter-tl-bytes"
+                       id="update-chapter-tl-bytes"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-chapter-clnr-id" class="form-label text-secondary">Cleaner ID</label>
+                <input type="text"
+                       name="update-chapter-clnr-id"
+                       id="update-chapter-clnr-id"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-chapter-clnr-name" class="form-label text-secondary">Cleaner Name</label>
+                <input type="text"
+                       name="update-chapter-clnr-name"
+                       id="update-chapter-clnr-name"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-chapter-ts-id" class="form-label text-secondary">TS ID</label>
+                <input type="text"
+                       name="update-chapter-ts-id"
+                       id="update-chapter-ts-id"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-chapter-ts-name" class="form-label text-secondary">TS Name</label>
+                <input type="text"
+                       name="update-chapter-ts-name"
+                       id="update-chapter-ts-name"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-chapter-qc-id" class="form-label text-secondary">QC ID</label>
+                <input type="text"
+                       name="update-chapter-qc-id"
+                       id="update-chapter-qc-id"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-chapter-qc-name" class="form-label text-secondary">QC Name</label>
+                <input type="text"
+                       name="update-chapter-qc-name"
+                       id="update-chapter-qc-name"
+                       class="form-control">
+            </div>
+            <div class="d-flex justify-content-center update-manga-footer">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

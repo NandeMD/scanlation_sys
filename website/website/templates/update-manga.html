@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+
+{% block title %}
+Update Manga
+{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+    <form method="post">
+        <br/><br/><br/>
+        <div class="update-manga-grid">
+            <div class="mb-3 update-manga-header">
+                <label for="update-manga-id" class="form-label text-secondary">Serie ID</label>
+                <input type="number"
+                       name="update-manga-id"
+                       id="update-manga-id"
+                       class="form-control"
+                       placeholder="*"
+                       oninput="this.value = !!this.value && Math.abs(this.value) > 0 ? Math.abs(this.value) : null">
+            </div>
+            <div class="mb-3">
+                <label for="update-manga-name" class="form-label text-secondary">Serie Name</label>
+                <input type="text"
+                       name="update-manga-name"
+                       id="update-manga-name"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-manga-imgurl" class="form-label text-secondary">Image URL</label>
+                <input type="text"
+                       name="update-manga-imgurl"
+                       id="update-manga-imgurl"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-manga-sourceurl" class="form-label text-secondary">Source URL</label>
+                <input type="text"
+                       name="update-manga-sourceurl"
+                       id="update-manga-sourceurl"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-manga-baseurl" class="form-label text-secondary">Base URL</label>
+                <input type="text"
+                       name="update-manga-baseurl"
+                       id="update-manga-baseurl"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-manga-lastsrc" class="form-label text-secondary">Last Source Chapter</label>
+                <input type="number"
+                       step="0.1"
+                       name="update-manga-lastsrc"
+                       id="update-manga-lastsrc"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-manga-lastbase" class="form-label text-secondary">Last Base Chapter</label>
+                <input type="number"
+                       step="0.1"
+                       name="update-manga-lastbase"
+                       id="update-manga-lastbase"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-manga-waitingpr" class="form-label text-secondary">Translated</label>
+                <input type="number"
+                       step="0.1"
+                       name="update-manga-waitingpr"
+                       id="update-manga-waitingpr"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-manga-pred" class="form-label text-secondary">PRed</label>
+                <input type="number"
+                       step="0.1"
+                       name="update-manga-pred"
+                       id="update-manga-pred"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-manga-cleaned" class="form-label text-secondary">Cleaned</label>
+                <input type="number"
+                       step="0.1"
+                       name="update-manga-cleaned"
+                       id="update-manga-cleaned"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-manga-completed" class="form-label text-secondary">TSed</label>
+                <input type="number"
+                       step="0.1"
+                       name="update-manga-completed"
+                       id="update-manga-completed"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-manga-last-qced" class="form-label text-secondary">QCed</label>
+                <input type="number"
+                       step="0.1"
+                       name="update-manga-last-qced"
+                       id="update-manga-last-qced"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-manga-role-id" class="form-label text-secondary">Role ID</label>
+                <input type="text"
+                       name="update-manga-role-id"
+                       id="update-manga-role-id"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-manga-channel-id" class="form-label text-secondary">Channel ID</label>
+                <input type="text"
+                       name="update-manga-channel-id"
+                       id="update-manga-channel-id"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-manga-tl-id" class="form-label text-secondary">TL ID</label>
+                <input type="text"
+                       name="update-manga-tl-id"
+                       id="update-manga-tl-id"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-manga-pr-id" class="form-label text-secondary">PR ID</label>
+                <input type="text"
+                       name="update-manga-pr-id"
+                       id="update-manga-pr-id"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-manga-clnr-id" class="form-label text-secondary">Cleaner ID</label>
+                <input type="text"
+                       name="update-manga-clnr-id"
+                       id="update-manga-clnr-id"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-manga-tser-id" class="form-label text-secondary">TS ID</label>
+                <input type="text"
+                       name="update-manga-tser-id"
+                       id="update-manga-tser-id"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-manga-qc" class="form-label text-secondary">QC?</label>
+                <select name="update-manga-qc" id="update-manga-qc" class="form-select">
+                            <option></option>
+                            <option value="1">Needed</option>
+                            <option value="0">Not Needed</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="update-manga-category-id" class="form-label text-secondary">Category ID</label>
+                <input type="text"
+                       name="update-manga-category-id"
+                       id="update-manga-category-id"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-manga-drive-url" class="form-label text-secondary">Drive URL</label>
+                <input type="text"
+                       name="update-manga-drive-url"
+                       id="update-manga-drive-url"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-manga-lastreader-id" class="form-label text-secondary">Last Reader ID</label>
+                <input type="text"
+                       name="update-manga-lastreader-id"
+                       id="update-manga-lastreader-id"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-manga-last-read" class="form-label text-secondary">Last Read</label>
+                <input type="text"
+                       name="update-manga-last-read"
+                       id="update-manga-last-read"
+                       class="form-control">
+            </div>
+            <div class="d-flex justify-content-center update-manga-footer">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

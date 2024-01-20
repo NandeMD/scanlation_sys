@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}
+Update Payment Period
+{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+    <form method="post">
+        <br/><br/><br/>
+        <div class="mb-5 ">
+            <label for="update-period-id" class="form-label text-secondary">Period ID</label>
+            <input type="number"
+                   name="update-period-id"
+                   id="update-period-id"
+                   class="form-control"
+                   placeholder="*"
+                   oninput="this.value = !!this.value && Math.abs(this.value) > 0 ? Math.abs(this.value) : null">
+        </div>
+        <div class="update-period-grid m ">
+            <div class="mb-3">
+                <label for="update-period-creator-id" class="form-label text-secondary">Creator ID</label>
+                <input type="number"
+                       name="update-period-creator-id"
+                       id="update-period-creator-id"
+                       class="form-control"
+                       oninput="this.value = !!this.value && Math.abs(this.value) > 0 ? Math.abs(this.value) : null">
+            </div>
+            <div class="mb-3">
+                <label for="update-period-cretor-name" class="form-label text-secondary">Creator Name</label>
+                <input type="text"
+                       name="update-period-cretor-name"
+                       id="update-period-cretor-name"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-period-created-at" class="form-label text-secondary">New Creation Date</label>
+                <input type="datetime-local"
+                       name="update-period-created-at"
+                       id="update-period-created-at">
+            </div>
+            <div class="mb-3">
+                <label for="update-period-closer-id" class="form-label text-secondary">Closer ID</label>
+                <input type="number"
+                       name="update-period-closer-id"
+                       id="update-period-closer-id"
+                       class="form-control"
+                       oninput="this.value = !!this.value && Math.abs(this.value) > 0 ? Math.abs(this.value) : null">
+            </div>
+            <div class="mb-3">
+                <label for="update-period-closer-name" class="form-label text-secondary">Closer Name</label>
+                <input type="text"
+                       name="update-period-closer-name"
+                       id="update-period-closer-name"
+                       class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="update-period-closed-at" class="form-label text-secondary">New Closing Date</label>
+                <input type="datetime-local"
+                       name="update-period-closed-at"
+                       id="update-period-closed-at"
+                       class="form-control date">
+            </div>
+            <div class="d-flex justify-content-center update-manga-footer">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

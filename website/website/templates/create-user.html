@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+Create User
+{% endblock %}
+
+{% block content %}
+    <div class="d-flex justify-content-center">
+        <form method="post">
+            <h1 class="text-secondary">Create User</h1>
+            <br><br/>
+            <div class="mb-3">
+                <label for="create-user-email" class="form-label text-secondary">E-Mail Address</label>
+                <input type="email" class="form-control" id="create-user-email" name="create-user-email">
+            </div>
+            <div class="mb-3">
+                <label for="create-user-username" class="form-label text-secondary">User Name</label>
+                <input type="text" class="form-control" id="create-user-username" name="create-user-username">
+            </div>
+            <div class="mb-3">
+                <label for="create-user-pwd" class="form-label text-secondary">Password</label>
+                <input type="password" class="form-control" id="create-user-pwd" name="create-user-pwd" placeholder="En az 6 hane.">
+            </div>
+            <div class="mb-3">
+                <label for="create-user-pwd-cnf" class="form-label text-secondary">Confirm Password</label>
+                <input type="password" class="form-control" id="create-user-pwd-cnf" name="create-user-pwd-cnf" placeholder="En az 6 hane.">
+            </div>
+            <div class="mb-3">
+                <label class="form-label text-secondary" for="create-user-role">Role</label>
+                <select name="create-user-role" id="create-user-role" class="form-select">
+                    <option selected value="normal">Normal</option>
+                    {% if user.role == "super" %}
+                    <option value="admin">Admin</option>
+                    <option value="super">God</option>
+                    {% endif %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Create User</button>
+        </form>
+    </div>
+{% endblock %}

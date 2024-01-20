@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+Delete Payment Period
+{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+    <form method="post">
+        <br/><br/><br/><br/>
+        <div class="input-group flex">
+            <span class="input-group-text" id="delete-period-span">Period ID</span>
+            <input type="number"
+                   class="form-control"
+                   placeholder="Period ID"
+                   aria-describedby="delete-period-span"
+                   aria-label="PeriodID"
+                   name="delete-period-id"
+                   id="delete-period-id"
+                   oninput="this.value = !!this.value && Math.abs(this.value) > 0 ? Math.abs(this.value) : null">
+            <button type="submit" class="btn btn-primary">Delete</button>
+        </div>
+        <br/><br/>
+        <div class="input-group flex">
+            <span class="input-group-text" id="delete-all-periods-span">Enter 'Yes.' to confirm.</span>
+            <input type="text"
+                   class="form-control"
+                   placeholder="Yes."
+                   aria-describedby="delete-all-periods-span"
+                   aria-label="Yes."
+                   name="delete-all-periods-confirm"
+                   id="delete-all-periods-confirm">
+            <button type="submit" class="btn btn-danger">Nuke All Payment Periods</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

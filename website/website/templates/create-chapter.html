@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+Add Chapter
+{% endblock %}
+
+{% block content %}
+    <div class="d-flex flex-column justify-content-center">
+        <div class="d-flex justify-content-center">
+            <form method="POST">
+                <br><br/>
+                <div class="create-manga-grid">
+                    <div class="mb-3">
+                        <label for="create-chapter-serie-id" class="form-label text-secondary">Serie ID</label>
+                        <input type="text" name="create-chapter-serie-id" id="create-chapter-serie-id" class="form-control" style="width: 100%">
+                    </div>
+                    <div class="mb-3">
+                        <label for="create-chapter-serie-name" class="form-label text-secondary">Serie Name</label>
+                        <input type="text" name="create-chapter-serie-name" id="create-chapter-serie-name" class="form-control" style="width: 100%">
+                    </div>
+                    <div class="mb-3">
+                        <label for="create-chapter-ch-no" class="form-label text-secondary">Chapter Number</label>
+                        <input type="text" name="create-chapter-ch-no" id="create-chapter-ch-no" class="form-control" style="width: 100%">
+                    </div>
+                    <div class="mb-3">
+                        <label for="create-chapter-creator-id" class="form-label text-secondary">Opener ID</label>
+                        <input type="text" name="create-chapter-creator-id" id="create-chapter-creator-id" class="form-control" style="width: 100%">
+                    </div>
+                    <div class="create-manga-upfooter">
+                        <label for="create-chapter-creator-name" class="form-label text-secondary">Closer Adı</label>
+                        <input type="text" name="create-chapter-creator-name" id="create-chapter-creator-name" class="form-control" style="width: 100%">
+                    </div>
+                    <div class="create-manga-footer">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

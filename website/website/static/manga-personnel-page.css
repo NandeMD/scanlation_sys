@@ -1,0 +1,18 @@
+.table-personnel {
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+.personnel-page-id {
+    max-width: 70px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    background-clip: padding-box;
+}
+
+.personnel-page-id:hover {
+    overflow: visible;
+    z-index: 2;
+}

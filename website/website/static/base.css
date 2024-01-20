@@ -1,0 +1,150 @@
+body {
+    background: #16151d;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.search-group {
+    margin-right: 4%;
+    margin-left: 4%;
+    max-width: 25%;
+}
+
+.td-centered {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.overfloved-span {background-color: inherit;}
+
+.th-centered {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.manga-name {max-width: 150px;}
+
+.update-manga-grid {
+    display: grid;
+    grid-template-areas:
+            'header header header header'
+            'left left right right'
+            'left left right right'
+            'left left right right'
+            'left left right right'
+            'left left right right'
+            'upfooter upfooter upfooter upfooter'
+            'footer footer footer footer';
+    justify-items: center;
+}
+
+.update-manga-grid > div {padding: 3%;}
+
+.update-manga-header {
+    grid-area: header;
+    align-items: center;
+    max-width: 100%;
+}
+
+.update-manga-upfooter {grid-area: upfooter;}
+
+.update-manga-footer {grid-area: footer;}
+
+.create-manga-grid {
+    display: grid;
+    grid-template-areas:
+            'left right'
+            'left right'
+            'left right'
+            'left right'
+            'left right'
+            'left right'
+            'upfooter upfooter'
+            'footer footer';
+    justify-items: center;
+}
+
+.create-manga-grid > div {padding: 3%;}
+
+.create-manga-upfooter {grid-area: upfooter;}
+
+.create-manga-footer { grid-area: footer;}
+
+.supported-sites-grid {
+    display: grid;
+    grid-template-areas: 'left right';
+}
+
+.supported-sites-grid > li {
+    border-width: thin;
+    border-color: #16151d;
+}
+
+.update-chapter-grid {
+    display: grid;
+    grid-template-areas:
+            'header header header header'
+            'subheader subheader subheader subheader'
+            'left left right right'
+            'left left right right'
+            'left left right right'
+            'left left right right'
+            'left left right right'
+            'left left right right'
+            'footer footer footer footer';
+    justify-items: center;
+}
+
+.update-chapter-grid > div {padding: 3%;}
+
+.update-chapter-header {
+    grid-area: header;
+    align-items: center;
+    max-width: 100%;
+}
+
+.update-chapter-subheader {
+    grid-area: 1 / 2 / 1 / 1;
+    align-items: stretch;
+    max-width: 100%;
+}
+
+.update-chapter-upfooter {grid-area: upfooter;}
+
+.update-chapter-footer {grid-area: footer;}
+
+.update-period-grid {
+    display: grid;
+    grid-template-areas:
+            'header header header'
+            'subheader subheader subheader'
+            'left center right'
+            'left center right'
+            'left center right'
+            'left center right'
+            'left center right'
+            'left center right'
+            'footer footer footer';
+    justify-items: center;
+}
+
+.update-period-grid > div {padding: 3%;}
+
+.update-period-header {
+    grid-area: header;
+    align-items: center;
+    max-width: 100%;
+}
+
+.update-period-subheader {
+    grid-area: 1 / 2 / 1 / 1;
+    align-items: stretch;
+    max-width: 100%;
+}
+
+.update-period-upfooter {grid-area: upfooter;}
+
+.update-period-footer {grid-area: footer;}

@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Bölümler
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+{% endblock %}
+
+{% block content %}
+    <br/><br/>
+    <div class="d-flex justify-content-center">
+        <div class="input-group search-group">
+            <span class="input-group-text">Chapter ID</span>
+            <input type="text" class="form-control" placeholder="Search by ID" aria-label="ID" id="search-by-id" onkeyup="filterByID()">
+        </div>
+        <div class="input-group search-group">
+            <span class="input-group-text">Serie Name</span>
+            <input type="text" class="form-control" placeholder="Search by Name" aria-label="SN" id="search-by-serie-name" onkeyup="filterBySerieName()">
+        </div>
+        <div class="input-group search-group">
+            <span class="input-group-text">Chapter Num</span>
+            <input type="text" class="form-control" placeholder="Search by Chapter Num" aria-label="BN" id="search-by-chapter-no" onkeyup="filterByChapterNumber()">
+        </div>
+    </div>
+    <br/><br/>
+    <div class="table-margin">
+        <table class="table table-hover table-dark table-bordered" id="chapters-page-table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Serie Name</th>
+                    <th scope="col" class="th-centered">Chapter No</th>
+                    <th scope="col" class="th-centered">Opener</th>
+                    <th scope="col" class="th-centered">Opened At</th>
+                    <th scope="col" class="th-centered">Translator</th>
+                    <th scope="col" class="th-centered">TL At</th>
+                    <th scope="col" class="th-centered">Bytes</th>
+                    <th scope="col" class="th-centered">Proofreader</th>
+                    <th scope="col" class="th-centered">PR At</th>
+                    <th scope="col" class="th-centered">Cleaner</th>
+                    <th scope="col" class="th-centered">CLN At</th>
+                    <th scope="col" class="th-centered">Typesetter</th>
+                    <th scope="col" class="th-centered">TS At</th>
+                    <th scope="col" class="th-centered">Quality Checker</th>
+                    <th scope="col" class="th-centered">QC At</th>
+                    <th scope="col" class="th-centered">Closer</th>
+                    <th scope="col" class="th-centered">Closed At</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for chapter in chapters %}
+                    <tr id="cr-{{ chapter["id"] }}">
+                        <th scope="row" class="td-centered">{{ chapter["id"] }}</th>
+                        <td class="td-centered" data-first="{{ chapter['serie_name'] }}" data-second="{{ chapter['serie_id'] }}" onmouseenter="changeOnFocus(this)" onmouseleave="changeOnFocus(this, 1)">{{ chapter["serie_name"] }}</td>
+                        <td class="td-centered manga-name">{{ chapter["chapter_num"] }}</td>
+                        <td class="td-centered overflowed-td-130" data-first="{{ chapter['creator_name'] }}" data-second="{{ chapter['creator_id'] }}" onmouseenter="changeOnFocus(this)" onmouseleave="changeOnFocus(this, 3)">{{ chapter["creator_name"] }}</td>
+                        <td class="td-centered overflowed-td-130">{{ chapter["created_at"] }}</td>
+                        <td class="td-centered overflowed-td-130" data-first="{{ chapter['tl_name'] }}" data-second="{{ chapter['tl_id'] }}" onmouseenter="changeOnFocus(this)" onmouseleave="changeOnFocus(this)">{{ chapter["tl_name"] }}</td>
+                        <td class="td-centered overflowed-td-130">{{ chapter["tl_at"] }}</td>
+                        <td class="td-centered overflowed-td-130">{{ chapter["tl_bytes"] }}</td>
+                        <td class="td-centered overflowed-td-130" data-first="{{ chapter['pr_name'] }}" data-second="{{ chapter['pr_id'] }}" onmouseenter="changeOnFocus(this)" onmouseleave="changeOnFocus(this)">{{ chapter["pr_name"] }}</td>
+                        <td class="td-centered overflowed-td-130">{{ chapter["pr_at"] }}</td>
+                        <td class="td-centered overflowed-td-130" data-first="{{ chapter['clnr_name'] }}" data-second="{{ chapter['clnr_id'] }}" onmouseenter="changeOnFocus(this)" onmouseleave="changeOnFocus(this)">{{ chapter["clnr_name"] }}</td>
+                        <td class="td-centered overflowed-td-130">{{ chapter["clnr_at"] }}</td>
+                        <td class="td-centered overflowed-td-130" data-first="{{ chapter['ts_name'] }}" data-second="{{ chapter['ts_id'] }}" onmouseenter="changeOnFocus(this)" onmouseleave="changeOnFocus(this)">{{ chapter["ts_name"] }}</td>
+                        <td class="td-centered overflowed-td-130">{{ chapter["ts_at"] }}</td>
+                        <td class="td-centered overflowed-td-130" data-first="{{ chapter['qc_name'] }}" data-second="{{ chapter['qc_id'] }}" onmouseenter="changeOnFocus(this)" onmouseleave="changeOnFocus(this)">{{ chapter["qc_name"] }}</td>
+                        <td class="td-centered overflowed-td-130">{{ chapter["qc_at"] }}</td>
+                        <td class="td-centered overflowed-td-130" data-first="{{ chapter['closer_name'] }}" data-second="{{ chapter['closer_id'] }}" onmouseenter="changeOnFocus(this)" onmouseleave="changeOnFocus(this)">{{ chapter["closer_name"] }}</td>
+                        <td class="td-centered overflowed-td-130">{{ chapter["closed_at"] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script type="application/javascript" src="{{ url_for('static', filename='chapters-page.js') }}" async></script>
+{% endblock %}

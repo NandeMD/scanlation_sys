@@ -1,0 +1,11 @@
+venv
+.code
+.idea
+test.*
+__pycache__
+*series.db
+sqa/series.db
+*chapters.db
+chs/chapters.db
+speedruns/speedruns.db
+*speedruns.db

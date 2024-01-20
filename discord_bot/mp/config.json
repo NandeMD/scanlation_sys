@@ -1,0 +1,33 @@
+{
+    "deployment_api_ip": "http://0.0.0.0:8000",
+    "debug_api_ip": "http://0.0.0.0:8000",
+    "token": "TOKEN",
+    "test_token": "TEST_TOKEN",
+    "T_ZONE": "Europe/Istanbul",
+    "LOCALE": "tr",
+    "BOT_ID": 0,
+    "CHAPTER_DONE_CHNL_IDS": {
+        "TL": 0,
+        "PR": 0,
+        "CLN": 0,
+        "TS": 0,
+        "QC": 0
+    },
+    "PR_FEE": 0.3,
+    "QC_FEE": 0.3,
+    "POOP_URL": "",
+    "DOLLAR_URL": "",
+    "FIRST_WARN_HOUR": 48,
+    "SECOND_WARN_HOUR": 72,
+    "ADMIN_WARN_CHANNEL_ID": 0,
+    "QC_WORK_CHANNEL_ID": 0,
+    "TO_BE_TRANSLATED_CHANNEL_ID": 0,
+    "DAILY_CHANNEL_ID": 0,
+    "CATEGORIES": {
+        "current": 0,
+        "current2": 0,
+        "ready": 0,
+        "check": 0,
+        "category_full_safety": 0
+    }
+}

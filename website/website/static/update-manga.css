@@ -1,0 +1,25 @@
+.update-manga-grid {
+    display: grid;
+    grid-template-areas:
+            'header header header header'
+            'left left right right'
+            'left left right right'
+            'left left right right'
+            'left left right right'
+            'left left right right'
+            'left left right right'
+            'footer footer footer footer';
+    justify-items: center;
+}
+
+.update-manga-grid > div {padding: 3%;}
+
+.update-manga-header {
+    grid-area: header;
+    align-items: center;
+    max-width: 100%;
+}
+
+.update-manga-upfooter {grid-area: upfooter;}
+
+.update-manga-footer {grid-area: footer;}

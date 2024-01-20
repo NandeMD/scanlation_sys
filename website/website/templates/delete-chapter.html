@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+Delete Chapter
+{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+    <form method="post">
+        <br/><br/><br/><br/>
+        <div class="input-group flex">
+            <span class="input-group-text" id="delete-chapter-span">Chapter ID</span>
+            <input type="number"
+                   class="form-control"
+                   placeholder="Chapter ID"
+                   aria-describedby="delete-chapter-span"
+                   aria-label="ChapterID"
+                   name="delete-chapter-id"
+                   id="delete-chapter-id"
+                   oninput="this.value = !!this.value && Math.abs(this.value) > 0 ? Math.abs(this.value) : null">
+            <button type="submit" class="btn btn-primary">Delete</button>
+        </div>
+        <br/><br/>
+        <div class="input-group flex">
+            <span class="input-group-text" id="delete-all-chapters-span">Enter 'Yes.' to confirm.</span>
+            <input type="text"
+                   class="form-control"
+                   placeholder="Yes."
+                   aria-describedby="delete-all-chapters-span"
+                   aria-label="Yes."
+                   name="delete-all-chapters-confirm"
+                   id="delete-all-chapters-confirm">
+            <button type="submit" class="btn btn-danger">Nuke All Chapters</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

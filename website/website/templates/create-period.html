@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+Add Payment Period
+{% endblock %}
+
+{% block content %}
+    <div class="d-flex flex-column justify-content-center">
+        <div class="d-flex justify-content-center">
+            <form method="POST">
+                <br><br/>
+                <div class="create-manga-grid">
+                    <div class="mb-3">
+                        <label for="create-period-creator-id" class="form-label text-secondary">Opener ID</label>
+                        <input type="text" name="create-period-creator-id" id="create-period-creator-id" class="form-control" style="width: 100%">
+                    </div>
+                    <div class="mb-3">
+                        <label for="create-period-creator-name" class="form-label text-secondary">Opener Name</label>
+                        <input type="text" name="create-period-creator-name" id="create-period-creator-name" class="form-control" style="width: 100%">
+                    </div>
+                    <div class="create-manga-footer">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

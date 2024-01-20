@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+Acoount Settings
+{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+    <form method="post">
+        <h1 class="text-secondary">Acoount Settings</h1>
+        <br><br/>
+        <div class="mb-3">
+            <label for="settings-user-email" class="form-label text-secondary">New E-Mail</label>
+            <input type="email" class="form-control" id="settings-user-email" name="settings-user-email">
+        </div>
+        <div class="mb-3">
+            <label for="settings-user-username" class="form-label text-secondary">New Username</label>
+            <input type="text" class="form-control" id="settings-user-username" name="settings-user-username">
+        </div>
+        <div class="mb-3">
+            <label for="settings-user-pwd" class="form-label text-secondary">New Password</label>
+            <input type="password" class="form-control" id="settings-user-pwd" name="settings-user-pwd">
+        </div>
+        <div class="mb-3">
+            <label for="settings-user-pwd-cnf" class="form-label text-secondary">Confirm New Password</label>
+            <input type="password" class="form-control" id="settings-user-pwd-cnf" name="settings-user-pwd-cnf">
+        </div>
+        <br><br/>
+        <div class="mb-3">
+            <label for="settings-user-pwd-old" class="form-label text-secondary">Currrent Password</label>
+            <input type="password" class="form-control" id="settings-user-pwd-old" name="settings-user-pwd-old">
+            <span class="form-text">*These fields are mandatory.</span>
+        </div>
+        <button class="btn btn-primary" type="submit">Update</button>
+    </form>
+</div>
+{% endblock %}

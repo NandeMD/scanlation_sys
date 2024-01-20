@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block title %}
+Serie - Personnel
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='manga-personnel-page.css') }}">
+{% endblock %}
+
+{% block content %}
+    <br/><br/>
+    <div class="d-flex justify-content-center">
+        <div class="input-group search-group">
+            <span class="input-group-text">Serie ID</span>
+            <input type="text" class="form-control" placeholder="Search by ID" aria-label="ID" id="search-by-id" onkeyup="filterByID()">
+        </div>
+        <div class="input-group search-group">
+            <span class="input-group-text">Serie Name</span>
+            <input type="text" class="form-control" placeholder="Search by Name" aria-label="Name" id="search-by-name" onkeyup="filterByName()">
+        </div>
+    </div>
+
+    <br/><br/>
+
+    <div class="table-personnel" id="table-personnel">
+        <table class="table table-hover table-dark table-bordered" id="personnel-table">
+            <thead>
+                <th scope="col" class="th-centered">ID</th>
+                <th scope="col" class="th-centered">Serie Name</th>
+                <th scope="col" class="th-centered">Role ID</th>
+                <th scope="col" class="th-centered">Channel ID</th>
+                <th scope="col" class="th-centered">Main Category ID</th>
+                <th scope="col" class="th-centered">Current Category ID</th>
+                <th scope="col" class="th-centered">Translator ID</th>
+                <th scope="col" class="th-centered">PR / LR ID</th>
+                <th scope="col" class="th-centered">Cleaner ID</th>
+                <th scope="col" class="th-centered">Typesetter ID</th>
+                <th scope="col" class="th-centered">QC?</th>
+            </thead>
+            <tbody>
+            {% for manga in mangas %}
+                <tr>
+                    <th scope="row" class="th-centered">{{ manga["id"] }}</th>
+                    <td class="manga-name td-centered">{{ manga["name"] }}</td>
+                    <td class="td-centered personnel-page-id"><span class="overfloved-span">{{ manga["role_id"] }}</span></td>
+                    <td class="td-centered personnel-page-id"><span class="overfloved-span">{{ manga["channel_id"] }}</span></td>
+                    <td class="td-centered personnel-page-id"><span class="overfloved-span">
+                        {% if manga["main_category"] == 0 %}
+                            None
+                        {% elif manga["main_category"] == 1%}
+                            Rookie
+                        {% elif manga["main_category"] == 2 %}
+                            Manga
+                        {% elif manga["main_category"] == 3 %}
+                            Season Finale
+                        {% elif manga["main_category"] == 4 %}
+                            Hiatus
+                        {% else %}
+                            {{ manga["main_category"] }}
+                        {% endif %}
+                    </span></td>
+                    <td class="td-centered personnel-page-id"><span class="overfloved-span">
+                        {% if manga["current_category"] == 0 %}
+                            None
+                        {% elif manga["current_category"] == 1%}
+                            Stajyer
+                        {% elif manga["current_category"] == 2 %}
+                            Rookie
+                        {% elif manga["current_category"] == 3 %}
+                            Season Finale
+                        {% elif manga["current_category"] == 4 %}
+                            Hiatus
+                        {% else %}
+                            {{ manga["current_category"] }}
+                        {% endif %}
+                    </span></td>
+                    <td class="td-centered personnel-page-id"><span class="overfloved-span">
+                        {% if manga["tl"] == 0 %}
+                            None
+                        {% elif manga["tl"] == 1%}
+                            Rookie
+                        {% elif manga["tl"] == 2 %}
+                            Manga
+                        {% elif manga["tl"] == 3 %}
+                            Season Finale
+                        {% elif manga["tl"] == 4 %}
+                            Hiatus
+                        {% else %}
+                            {{ manga["tl"] }}
+                        {% endif %}
+                    </span></td>
+                    <td class="td-centered personnel-page-id"><span class="overfloved-span">
+                        {% if manga["lr"] is not none %}
+                            {{ manga["lr"] }}
+                        {% else %}
+                            {% if manga["pr"] == 0 %}
+                                None
+                            {% elif manga["pr"] == 1%}
+                                Rookie
+                            {% elif manga["pr"] == 2 %}
+                                Manga
+                            {% elif manga["pr"] == 3 %}
+                                Season Finale
+                            {% elif manga["pr"] == 4 %}
+                                Hiatus
+                            {% else %}
+                                {{ manga["pr"] }}
+                            {% endif %}
+                        {% endif %}
+                    </span></td>
+                    <td class="td-centered personnel-page-id"><span class="overfloved-span">
+                        {% if manga["clnr"] == 0 %}
+                            None
+                        {% elif manga["clnr"] == 1%}
+                            Rookie
+                        {% elif manga["clnr"] == 2 %}
+                            Manga
+                        {% elif manga["clnr"] == 3 %}
+                            Season Finale
+                        {% elif manga["clnr"] == 4 %}
+                            Hiatus
+                        {% else %}
+                            {{ manga["clnr"] }}
+                        {% endif %}
+                    </span></td>
+                    <td class="td-centered personnel-page-id"><span class="overfloved-span">
+                        {% if manga["tser"] == 0 %}
+                            None
+                        {% elif manga["tser"] == 1%}
+                            Rookie
+                        {% elif manga["tser"] == 2 %}
+                            Manga
+                        {% elif manga["tser"] == 3 %}
+                            Season Finale
+                        {% elif manga["tser"] == 4 %}
+                            Hiatus
+                        {% else %}
+                            {{ manga["tser"] }}
+                        {% endif %}
+                    </span></td>
+                <td class="td-centered personnel-page-id"><span class="overfloved-span">
+                        {% if manga["qcer"] %}
+                            Needed
+                        {% else %}
+                            Not Needed
+                        {% endif %}
+                    </span></td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+    <script type="application/javascript" src="{{ url_for('static', filename='manga-personnel-page.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+{% endblock %}
+
+{% block content %}
+    <!--suppress ALL -->
+    <br/><br/>
+    <div class="d-flex justify-content-center">
+        <div class="input-group search-group">
+            <span class="input-group-text">Serie ID</span>
+            <input type="text" class="form-control" placeholder="Search by ID" aria-label="ID" id="search-by-id" onkeyup="filterByID()">
+        </div>
+        <div class="input-group search-group">
+            <span class="input-group-text">Serie Name</span>
+            <input type="text" class="form-control" placeholder="Search by Name" aria-label="Name" id="search-by-name" onkeyup="filterByName()">
+        </div>
+    </div>
+    <br/><br/>
+    <div class="table-margin">
+        <table class="table table-hover table-dark table-bordered" id="home-page-table">
+            <thead>
+                <th scope="col"><a href="/?param=id&mode={{ qmode }}">ID</a></th>
+                <th scope="col"><a href="/?param=name&mode={{ qmode }}">Serie Name</a></th>
+                <th scope="col" class="th-centered">Image</th>
+                <th scope="col" class="th-centered">Source URL</th>
+                <th scope="col" class="th-centered">Base URL</th>
+                <th scope="col" class="th-centered">Drive URL</th>
+                <th scope="col" class="th-centered"><a href="/?param=ing_chap&mode={{ qmode }}">Last Source</a></th>
+                <th scope="col" class="th-centered"><a href="/?param=tr_chap&mode={{ qmode }}">Last Base</a></th>
+                <th scope="col" class="th-centered"><a href="/?param=waiting_pr&mode={{ qmode }}">Waiting PR</a></th>
+                <th scope="col" class="th-centered"><a href="/?param=pred&mode={{ qmode }}">PRed etc.</a></th>
+                <th scope="col" class="th-centered"><a href="/?param=cleaned&mode={{ qmode }}">Cleaned</a></th>
+                <th scope="col" class="th-centered"><a href="/?param=completed&mode={{ qmode }}">TSed</a></th>
+                <th scope="col" class="th-centered"><a href="/?param=last_qced&mode={{ qmode }}">QCed</a></th>
+                <th scope="col" class="th-centered"><a href="/?param=role_id&mode={{ qmode }}">Role ID</a></th>
+                <th scope="col" class="th-centered"><a href="/?param=channel_id&mode={{ qmode }}">Channel ID</a></th>
+            </thead>
+            <tbody>
+                {% for manga in mangas %}
+                    <tr>
+                        <th scope="row" class="align-middle">{{ manga["id"] }}</th>
+                        <td class="align-middle manga-name">{{ manga["name"] }}</td>
+                        <td class="td-centered td-image">
+                            <img src="{{ manga['image_url'] }}"
+                                 alt="Loading..."
+                                 loading="lazy"
+                                 class="img-fluid" height="200" width="200">
+                        </td>
+                        <td class="align-middle overflowed-td-230"><span class="overfloved-span">{{ manga["source_url"] }}</span></td>
+                        <td class="align-middle overflowed-td-230"><span class="overfloved-span">{{ manga["base_url"] }}</span></td>
+                        <td class="align-middle overflowed-td-230"><span class="overfloved-span">{{ manga["drive_url"] }}</span></td>
+                        <td class="td-centered">{{ manga["source_chap"] }}</td>
+                        <td class="td-centered">{{ manga["base_chap"] }}</td>
+                        <td class="td-centered">{{ manga["waiting_pr"] }}</td>
+                        <td class="td-centered">
+                            {% if manga["pred"] is not none %}
+                                {{ manga["pred"] }}
+                            {% else %}
+                                {{ manga["last_readed"] }}
+                            {% endif %}
+                        </td>
+                        <td class="td-centered">{{ manga["cleaned"] }}</td>
+                        <td class="td-centered">{{ manga["completed"] }}</td>
+                        <td class="td-centered">{{ manga["last_qced"] }}</td>
+                        <td class="td-centered overflowed-td-130"><span class="overfloved-span">{{ manga["role_id"] }}</span></td>
+                        <td class="td-centered overflowed-td-130"><span class="overfloved-span">{{ manga["channel_id"] }}</span></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script type="application/javascript" src="{{ url_for('static', filename='homepage.js') }}" async></script>
+{% endblock %}

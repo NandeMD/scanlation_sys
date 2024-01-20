@@ -1,0 +1,32 @@
+.table-margin {
+    margin-left:2%;
+    margin-right: 2%;
+}
+
+.overflowed-td-230 {
+    max-width: 230px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    background-clip: padding-box;
+}
+
+.overflowed-td-230:hover {
+    overflow: visible;
+    z-index: 2;
+}
+
+.overflowed-td-130 {
+    max-width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.overflowed-td-130:hover {
+    overflow: visible;
+    z-index: 2;
+}
+
+.td-image {width: fit-content;}

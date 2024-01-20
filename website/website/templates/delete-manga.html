@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+Delete Serie
+{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+    <form method="post">
+        <br/><br/><br/><br/>
+        <div class="input-group flex">
+            <span class="input-group-text" id="delete-manga-span">Serie ID</span>
+            <input type="number"
+                   class="form-control"
+                   placeholder="Serie ID"
+                   aria-describedby="delete-manga-span"
+                   aria-label="MangaID"
+                   name="delete-manga-id"
+                   id="delete-manga-id"
+                   oninput="this.value = !!this.value && Math.abs(this.value) > 0 ? Math.abs(this.value) : null">
+            <button type="submit" class="btn btn-primary">Delete</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
