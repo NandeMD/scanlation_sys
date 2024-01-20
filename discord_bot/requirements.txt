@@ -9,7 +9,6 @@ yarl==1.9.2
 certifi==2022.12.7
 requests==2.29.0
 urllib3==1.26.15
-SQLAlchemy==1.4.45
 XlsxWriter==3.0.3
 lxml==4.9.2
 python-docx==0.8.11
