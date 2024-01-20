@@ -4,7 +4,7 @@ A relatively simple updater for Scanlation Bot api.
 ## How To Use
 
 1. Install Python 3.11 or higher.
-2. Edit funcs.py and Settings.py, add your scraping settings.
+2. Edit [`funcs.py`](https://github.com/NandeMD/scanlation_sys/blob/main/update_script/lib/SettingsParser/funcs.py) and [`Settings.py`](https://github.com/NandeMD/scanlation_sys/blob/main/update_script/lib/SettingsParser/Settings.py), add your scraping settings.
 3. Create a virtual environment.
     ```bash
    # On Linux and Mac:
